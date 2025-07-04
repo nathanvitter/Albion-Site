@@ -1,68 +1,68 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Albion Hub</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AlbionHub - Accueil</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
 </head>
-<body class="dark">
+<body>
   <header>
-    <div class="container header-inner">
+    <div class="container">
       <h1 class="logo">Albion<span>Hub</span></h1>
       <nav>
-        <a href="#">Outils</a><a href="#">Builds</a><a href="#">Vidéos</a><a href="#">Guides</a>
+        <a href="#news">Actus</a>
+        <a href="#videos">Vidéos</a>
+        <a href="#builds">Builds</a>
+        <a href="#contact">Contact</a>
       </nav>
-      <button id="themeToggle">🌗</button>
     </div>
   </header>
 
   <section class="hero">
-    <div class="container">
-      <h2>Boostez votre grind</h2>
-      <p>Calculatrices, builds méta, vidéos PVP et guides pro.</p>
-      <a href="#tools" class="cta">Voir les outils</a>
+    <div class="overlay">
+      <h2>Explore le monde brutal d’Albion</h2>
+      <p>Guides, Builds, Actus et Vidéos de la communauté</p>
+      <a href="#news" class="btn">Découvrir</a>
     </div>
   </section>
 
-  <section id="tools" class="tools">
-    <div class="container section-title"><h3>🛠️ Outils et calculettes</h3></div>
-    <div class="tools-grid">
-      <div class="card"><h4>Market Flipping</h4><p>Calculateur de profits en temps réel.</p></div>
-      <div class="card"><h4>Animal Profits</h4><p>Analyse du profit pour l’élevage.</p></div>
-      <div class="card"><h4>Island Management</h4><p>Planifiez vos récoltes et timers efficaces.</p></div>
-      <div class="card"><h4>Price Checker</h4><p>Consultez les prix sur tous les serveurs.</p></div>
+  <section class="section" id="news">
+    <h2>Dernières actus</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>Patch PvP Août 2025</h3>
+        <p>Découvrez les derniers équilibrages de la meta PvP et des nouvelles zones de combat.</p>
+        <a href="#">Lire plus →</a>
+      </article>
+      <article class="card">
+        <h3>Update Abyssal Depths</h3>
+        <p>Le nouveau contenu de donjon et la refonte des montures légendaires.</p>
+        <a href="#">Lire plus →</a>
+      </article>
     </div>
   </section>
 
-  <section class="videos">
-    <div class="container section-title"><h3>🎥 Vidéos Albion Online</h3></div>
-    <div class="video-grid">
-      <iframe src="https://www.youtube.com/embed/jvQ-o0i7Bek" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/_SUNgAjCVGw" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/drdk-suZp4M" allowfullscreen></iframe>
+  <section class="section" id="videos">
+    <h2>Vidéos Albion</h2>
+    <div class="grid">
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/4GIrITtU5RA" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/UBMH9VuOz8g" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/KMb90azSc0k" frameborder="0" allowfullscreen></iframe>
+      </div>
     </div>
-  </section>
-
-  <section class="builds">
-    <div class="container section-title"><h3>🏹 Builds Méta</h3></div>
-    <ul>
-      <li><a href="#">PvP Double Dagues Assassin</a></li>
-      <li><a href="#">Tank HCE & ZvZ</a></li>
-      <li><a href="#">Solo Donjon Épée Clarente</a></li>
-    </ul>
   </section>
 
   <footer>
     <div class="container">
-      <div>Rejoignez-nous sur Discord • Fan‑Made</div>
-      <small>&copy; 2025 Albion Hub</small>
+      <p>© 2025 AlbionHub | Créé par un fan pour les fans</p>
     </div>
   </footer>
-
-  <script>
-    document.getElementById('themeToggle').onclick = () =>
-      document.body.classList.toggle('light');
-  </script>
 </body>
 </html>
