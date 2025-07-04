@@ -1,153 +1,100 @@
 :root {
-  --bg: #f7f9fb;
-  --text: #1b1b1b;
-  --accent: #ff2d55;
-  --card: #ffffff;
-  --shadow: rgba(0, 0, 0, 0.1);
+  --bg: #121212;
+  --text: #e0e0e0;
+  --accent: #b71c1c;
+  --card: #1e1e1e;
+  --shadow: rgba(0,0,0,0.7);
 }
 
-body.dark {
-  --bg: #121212;
-  --text: #eaeaea;
-  --accent: #ff6ee0;
-  --card: #1f1f1f;
-  --shadow: rgba(255, 255, 255, 0.05);
+body.light {
+  --bg: #f2f2f2;
+  --text: #1b1b1b;
+  --accent: #c62828;
+  --card: #ffffff;
+  --shadow: rgba(0,0,0,0.1);
 }
 
 body {
-  margin: 0;
-  font-family: 'Rajdhani', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.4s, color 0.4s;
+  margin:0;
+  font-family:'Rajdhani',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  transition:0.4s;
 }
 
-a {
-  color: var(--accent);
-  text-decoration: none;
-}
+a { color:var(--accent); text-decoration:none; }
+a:hover { opacity:0.8; }
 
 .site-header {
-  background: var(--card);
-  box-shadow: 0 2px 10px var(--shadow);
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background:var(--card);
+  box-shadow:0 2px 8px var(--shadow);
+  padding:1rem 2rem;
+  display:flex; justify-content:space-between; align-items:center;
 }
 
-.logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-}
+.logo { font-size:1.8rem; font-weight:bold; }
+.logo span { color:var(--accent); }
 
-.logo span {
-  color: var(--accent);
-}
+nav a { margin:0 1rem; font-weight:600; }
 
-nav a {
-  margin: 0 0.8rem;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-
-nav a:hover {
-  color: var(--accent);
-}
-
-#themeToggle {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
+#themeToggle { background:none; border:none; font-size:1.5rem; cursor:pointer; }
 
 .hero {
-  background: linear-gradient(to right, #000, #2d2d2d);
-  color: white;
-  padding: 5rem 2rem;
-  text-align: center;
+  background:linear-gradient(135deg, #2a0000, #600000);
+  text-align:center; padding:5rem 2rem;
 }
-
-.hero h2 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
-}
-
 .cta {
-  display: inline-block;
-  margin-top: 1.5rem;
-  padding: 0.8rem 1.5rem;
-  background: var(--accent);
-  color: white;
-  border-radius: 10px;
-  font-weight: bold;
-  transition: background 0.3s;
+  display:inline-block; margin-top:1rem;
+  background:var(--accent); color:#fff;
+  padding:.8rem 1.5rem; border-radius:8px;
+  font-weight:600; transition:0.3s;
 }
+.cta:hover { background:#ff1744; }
 
-.cta:hover {
-  background: #e60050;
-}
-
-.section-title {
-  text-align: center;
-  margin: 3rem 0 1rem;
-}
+.section-title { text-align:center; margin:3rem 0 1rem; font-size:1.5rem; }
 
 .actus-grid, .video-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  padding: 0 2rem;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:1.5rem;
+  padding:0 2rem;
 }
 
 .card {
-  background: var(--card);
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 8px 20px var(--shadow);
-  transition: transform 0.3s;
+  background:var(--card);
+  padding:1.5rem;
+  border-radius:10px;
+  box-shadow:0 4px 16px var(--shadow);
+  transition:transform .3s, box-shadow .3s;
 }
-
 .card:hover {
-  transform: translateY(-5px);
+  transform:translateY(-6px);
+  box-shadow:0 8px 24px var(--shadow);
 }
 
 .video-grid iframe {
-  width: 100%;
-  height: 200px;
-  border-radius: 12px;
-  border: none;
+  width:100%; height:220px;
+  border-radius:10px; border:none;
+  box-shadow:0 4px 16px var(--shadow);
+  transition:transform .3s;
+}
+.video-grid iframe:hover {
+  transform:scale(1.03);
 }
 
-.guides ul {
-  list-style: none;
-  padding: 0 2rem;
-  margin-bottom: 3rem;
-}
-
+.guides ul { list-style:none; padding:0 2rem; }
 .guides li {
-  background: var(--card);
-  margin: 0.5rem 0;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px var(--shadow);
-  transition: background 0.3s;
+  background:var(--card); margin:0.5rem 0;
+  padding:1rem; border-radius:8px;
+  box-shadow:0 3px 12px var(--shadow);
+  transition:background .3s,color .3s;
 }
-
 .guides li:hover {
-  background: var(--accent);
-  color: white;
+  background:var(--accent); color:#fff;
 }
 
 footer {
-  text-align: center;
-  padding: 2rem;
-  background: var(--card);
-  color: var(--text);
-  font-size: 0.9rem;
+  text-align:center; padding:2rem;
+  background:var(--card);
+  font-size:.9rem;
 }
