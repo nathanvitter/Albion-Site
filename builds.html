@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Builds Méta Albion Online</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>📜 Builds Méta Albion Online</h1>
+    <nav>
+      <a href="index.html">Accueil</a>
+    </nav>
+  </header>
+
+  <main>
+    <div id="builds-container">Chargement des builds...</div>
+  </main>
+
+  <footer>
+    <p>© 2025 - Données non officielles</p>
+  </footer>
+
+  <script>
+    fetch('data/builds.json')
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById('builds-container');
+        container.innerHTML = ''; // efface "chargement..."
+        data.forEach(build => {
+          const div = document.createElement('div');
+          div.className = 'build';
+          div.innerHTML = `
+            <h2>${build.nom} <span class="tag">${build.mode}</span></h2>
+            <p><strong>Arme :</strong> ${build.arme}</p>
+            <p><strong>Armure :</strong> ${build.armure.join(', ')}</p>
+            <p><strong>Sorts :</strong> ${build.sorts.join(', ')}</p>
+            <p><strong>Potion :</strong> ${build.potion} | <strong>Bouffe :</strong> ${build.bouffe}</p>
+            <p><strong>Fort contre :</strong> ${build.fortContre.join(', ')}</p>
+            <p><strong>Faible contre :</strong> ${build.faibleContre.join(', ')}</p>
+            <p><strong>Winrate :</strong> ${build.winrate}</p>
+            <p><strong>Conseils :</strong> ${build.strategie}</p>
+          `;
+          container.appendChild(div);
+        });
+      });
+  </script>
+</body>
+</html>
