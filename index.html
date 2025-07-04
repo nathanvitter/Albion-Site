@@ -1,137 +1,77 @@
+<!-- builds.html -->
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accueil - Albion Online Meta FR</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #0f172a, #1e293b);
-      color: #f8fafc;
-      line-height: 1.6;
-    }
-    header {
-      background-color: #1e3a8a;
-      padding: 2em 1em;
-      text-align: center;
-      color: #ffffff;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-    }
-    header h1 {
-      font-size: 2.5em;
-      margin-bottom: 0.3em;
-    }
-    header p {
-      font-size: 1.2em;
-      color: #cbd5e1;
-    }
-    nav {
-      background-color: #334155;
-      display: flex;
-      justify-content: center;
-      gap: 2em;
-      padding: 1em;
-      box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.1);
-    }
-    nav a {
-      color: #e0f2fe;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.2s ease-in-out;
-    }
-    nav a:hover {
-      color: #38bdf8;
-    }
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 2em;
-    }
-    .section {
-      margin-bottom: 3em;
-    }
-    .section h2 {
-      font-size: 2em;
-      margin-bottom: 1em;
-      color: #60a5fa;
-      border-left: 6px solid #38bdf8;
-      padding-left: 0.5em;
-    }
-    .video-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 2em;
-    }
-    .video-card {
-      background-color: #1e293b;
-      border-radius: 10px;
-      overflow: hidden;
-      padding: 1em;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-      text-align: center;
-    }
-    .video-card iframe {
-      width: 100%;
-      height: 200px;
-      border: none;
-      border-radius: 5px;
-    }
-    .video-card p {
-      margin-top: 0.5em;
-      color: #e2e8f0;
-    }
-    footer {
-      background-color: #0f172a;
-      text-align: center;
-      padding: 2em;
-      color: #64748b;
-      font-size: 0.9em;
-    }
-  </style>
+  <title>Albion Builds - Builds</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script defer src="/assets/js/main.js"></script>
+  <script defer src="/assets/js/lang.js"></script>
+  <script defer src="/assets/js/builds.js"></script>
 </head>
 <body>
   <header>
-    <h1>Albion Online Meta FR</h1>
-    <p>Guides, builds, et stratégies pour tous les aventuriers d'Albion</p>
+    <nav class="navbar">
+      <div class="logo">Albion Builds</div>
+      <ul class="nav-links">
+        <li><a href="index.html" data-lang="nav_home">Accueil</a></li>
+        <li><a href="builds.html" data-lang="nav_builds">Builds</a></li>
+        <li><a href="guides.html" data-lang="nav_guides">Guides</a></li>
+        <li><a href="videos.html" data-lang="nav_videos">Vidéos</a></li>
+        <li><a href="contact.html" data-lang="nav_contact">Contact</a></li>
+      </ul>
+      <div class="controls">
+        <select id="langSwitcher">
+          <option value="fr">FR</option>
+          <option value="en">EN</option>
+        </select>
+        <button id="themeToggle">🌓</button>
+      </div>
+    </nav>
   </header>
-  <nav>
-    <a href="#builds">Builds</a>
-    <a href="#guides">Guides</a>
-    <a href="#videos">Vidéos</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <div class="container">
-    <section class="section" id="presentation">
-      <h2>Bienvenue !</h2>
-      <p>Ce site est dédié à tous les joueurs d'Albion Online : débutants, vétérans, crafteurs, gatherers ou combattants. Découvrez les builds les plus efficaces, les meilleures stratégies pour progresser, et des vidéos explicatives pour chaque style de jeu.</p>
-    </section>
 
-    <section class="section" id="videos">
-      <h2>🎬 Tutoriels Vidéo</h2>
-      <div class="video-container">
-        <div class="video-card">
-          <iframe src="https://www.youtube.com/embed/FB0aw4ZfXMY" title="Grind Explained" allowfullscreen></iframe>
-          <p>Great Axe Build & Grinding Tips</p>
-        </div>
-        <div class="video-card">
-          <iframe src="https://www.youtube.com/embed/LodJ700gVds" title="Starter Guide" allowfullscreen></iframe>
-          <p>Strong & Simple Builds for Beginners</p>
-        </div>
-        <div class="video-card">
-          <iframe src="https://www.youtube.com/embed/oRAlGqrHE2g" title="Gathering Guide" allowfullscreen></iframe>
-          <p>Guide Récolte Albion 2025</p>
-        </div>
+  <main class="builds-page">
+    <section class="filters">
+      <h1 data-lang="builds_title">Tous les Builds</h1>
+      <div class="filter-group">
+        <select id="modeFilter">
+          <option value="all" data-lang="filter_all">Tous les modes</option>
+          <option value="pvp-solo" data-lang="filter_pvp_solo">PvP solo</option>
+          <option value="pvp-group" data-lang="filter_pvp_group">PvP groupe</option>
+          <option value="pve" data-lang="filter_pve">PvE</option>
+          <option value="farming" data-lang="filter_farming">Farming</option>
+          <option value="gathering" data-lang="filter_gathering">Récolte</option>
+        </select>
+        <input type="text" id="searchInput" placeholder="Rechercher un build...">
       </div>
     </section>
-  </div>
+
+    <section id="buildsContainer" class="builds-list">
+      <!-- Les fiches builds seront injectées ici par JS -->
+    </section>
+  </main>
+
   <footer>
-    Fait avec ❤️ par la communauté francophone d'Albion Online — Version Alpha
+    <div class="footer-grid">
+      <div>
+        <h3>Albion Builds</h3>
+        <p data-lang="footer_desc">Un projet indépendant pour les joueurs, par les joueurs.</p>
+      </div>
+      <div>
+        <h4 data-lang="quick_links">Liens rapides</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="builds.html">Builds</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Discord</h4>
+        <p data-lang="discord_soon">Intégration à venir...</p>
+      </div>
+    </div>
+    <p class="copyright">&copy; 2025 Albion Builds. Tous droits réservés.</p>
   </footer>
 </body>
 </html>
