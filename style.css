@@ -1,100 +1,69 @@
 :root {
-  --bg: #121212;
-  --text: #e0e0e0;
-  --accent: #b71c1c;
-  --card: #1e1e1e;
-  --shadow: rgba(0,0,0,0.7);
+  --bg: #121212; --text: #eee; --accent: #b71c1c;
+  --card: #1e1e1e; --shadow: rgba(0,0,0,0.7);
 }
-
 body.light {
-  --bg: #f2f2f2;
-  --text: #1b1b1b;
-  --accent: #c62828;
-  --card: #ffffff;
-  --shadow: rgba(0,0,0,0.1);
+  --bg: #f2f2f2; --text: #111;
+  --card: #fff; --shadow: rgba(0,0,0,0.1);
 }
-
 body {
-  margin:0;
-  font-family:'Rajdhani',sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  transition:0.4s;
+  margin:0; font:400 16px 'Rajdhani',sans-serif;
+  background:var(--bg); color:var(--text);
+  transition:.3s;
 }
-
-a { color:var(--accent); text-decoration:none; }
-a:hover { opacity:0.8; }
-
-.site-header {
-  background:var(--card);
-  box-shadow:0 2px 8px var(--shadow);
-  padding:1rem 2rem;
-  display:flex; justify-content:space-between; align-items:center;
-}
-
-.logo { font-size:1.8rem; font-weight:bold; }
+.container { max-width:1200px; margin:auto; padding:0 1rem; }
+header { background:var(--card); position:sticky; top:0; z-index:1000;
+  box-shadow:0 2px 8px var(--shadow); }
+.header-inner { display:flex; align-items:center; justify-content:space-between; padding:1rem 0; }
+.logo { font-size:1.8rem; font-weight:700; }
 .logo span { color:var(--accent); }
-
-nav a { margin:0 1rem; font-weight:600; }
-
+nav a { margin:0 1rem; font-weight:600; color:var(--text); }
+nav a:hover { color:var(--accent); }
 #themeToggle { background:none; border:none; font-size:1.5rem; cursor:pointer; }
 
 .hero {
-  background:linear-gradient(135deg, #2a0000, #600000);
-  text-align:center; padding:5rem 2rem;
+  background:linear-gradient(135deg,#2a0000,#600000);
+  color:#fff; text-align:center; padding:4rem 0;
 }
+.hero h2 { font-size:2.5rem; margin-bottom:.5rem; }
+.hero p { font-size:1.1rem; }
 .cta {
-  display:inline-block; margin-top:1rem;
-  background:var(--accent); color:#fff;
-  padding:.8rem 1.5rem; border-radius:8px;
-  font-weight:600; transition:0.3s;
+  display:inline-block; margin-top:1rem; padding:.8rem 1.6rem;
+  background:var(--accent); color:#fff; border-radius:8px;
+  font-weight:600; transition:.3s;
 }
 .cta:hover { background:#ff1744; }
 
-.section-title { text-align:center; margin:3rem 0 1rem; font-size:1.5rem; }
+.section-title { text-align:center; margin:3rem 0 1rem; font-size:1.6rem; }
 
-.actus-grid, .video-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:1.5rem;
-  padding:0 2rem;
+.tools-grid, .video-grid {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:1.5rem; padding-bottom:2rem;
 }
-
 .card {
-  background:var(--card);
-  padding:1.5rem;
-  border-radius:10px;
-  box-shadow:0 4px 16px var(--shadow);
-  transition:transform .3s, box-shadow .3s;
+  background:var(--card); padding:1.5rem;border-radius:10px;
+  box-shadow:0 4px 16px var(--shadow); transition:.3s;
 }
-.card:hover {
-  transform:translateY(-6px);
-  box-shadow:0 8px 24px var(--shadow);
-}
+.card:hover { transform:translateY(-5px); box-shadow:0 8px 24px var(--shadow); }
 
 .video-grid iframe {
-  width:100%; height:220px;
-  border-radius:10px; border:none;
-  box-shadow:0 4px 16px var(--shadow);
-  transition:transform .3s;
+  width:100%; height:220px; border-radius:10px; border:none;
+  box-shadow:0 4px 16px var(--shadow); transition:.3s;
 }
-.video-grid iframe:hover {
-  transform:scale(1.03);
-}
+.video-grid iframe:hover { transform:scale(1.03); }
 
-.guides ul { list-style:none; padding:0 2rem; }
-.guides li {
-  background:var(--card); margin:0.5rem 0;
-  padding:1rem; border-radius:8px;
-  box-shadow:0 3px 12px var(--shadow);
-  transition:background .3s,color .3s;
+.builds ul {
+  list-style:none; padding:0; margin:0 1rem 3rem;
 }
-.guides li:hover {
-  background:var(--accent); color:#fff;
+.builds li {
+  background:var(--card); margin:0.5rem 0; padding:1rem;
+  border-radius:8px; box-shadow:0 3px 12px var(--shadow);
+  transition:.3s;
 }
+.builds li:hover { background:var(--accent); color:#fff; }
 
 footer {
-  text-align:center; padding:2rem;
-  background:var(--card);
-  font-size:.9rem;
+  background:var(--card); padding:2rem 0; text-align:center;
+  box-shadow:0 -2px 8px var(--shadow);
 }
+footer small { display:block; margin-top:.5rem; color:var(--text); }
