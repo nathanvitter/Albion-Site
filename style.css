@@ -1,96 +1,153 @@
 :root {
-  --bg: #ffffff;
-  --text: #111111;
-  --primary: #0077ff;
-  --card: #f2f2f2;
+  --bg: #f7f9fb;
+  --text: #1b1b1b;
+  --accent: #ff2d55;
+  --card: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.1);
 }
 
 body.dark {
   --bg: #121212;
   --text: #eaeaea;
-  --primary: #0af;
-  --card: #1e1e1e;
+  --accent: #ff6ee0;
+  --card: #1f1f1f;
+  --shadow: rgba(255, 255, 255, 0.05);
 }
 
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Rajdhani', sans-serif;
   background: var(--bg);
   color: var(--text);
-  transition: background 0.3s, color 0.3s;
+  transition: background 0.4s, color 0.4s;
 }
 
-.container {
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.site-header {
+  background: var(--card);
+  box-shadow: 0 2px 10px var(--shadow);
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
 }
 
-header {
-  background: var(--card);
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.logo span {
+  color: var(--accent);
 }
 
 nav a {
-  margin: 0 1rem;
-  text-decoration: none;
-  color: var(--text);
+  margin: 0 0.8rem;
   font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--accent);
 }
 
 #themeToggle {
   background: none;
   border: none;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   cursor: pointer;
 }
 
 .hero {
-  padding: 4rem 2rem;
-  text-align: center;
-  background: var(--primary);
+  background: linear-gradient(to right, #000, #2d2d2d);
   color: white;
+  padding: 5rem 2rem;
+  text-align: center;
 }
 
-.actus, .videos, .guides {
-  padding: 2rem;
-  max-width: 1200px;
-  margin: auto;
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.5rem;
+  background: var(--accent);
+  color: white;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.cta:hover {
+  background: #e60050;
+}
+
+.section-title {
+  text-align: center;
+  margin: 3rem 0 1rem;
 }
 
 .actus-grid, .video-grid {
   display: grid;
-  gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 0 2rem;
 }
 
-article {
+.card {
   background: var(--card);
-  padding: 1rem;
-  border-radius: 10px;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 20px var(--shadow);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
 
 .video-grid iframe {
   width: 100%;
   height: 200px;
+  border-radius: 12px;
   border: none;
-  border-radius: 10px;
 }
 
 .guides ul {
   list-style: none;
-  padding: 0;
+  padding: 0 2rem;
+  margin-bottom: 3rem;
 }
 
-.guides li a {
-  text-decoration: none;
-  color: var(--primary);
+.guides li {
+  background: var(--card);
+  margin: 0.5rem 0;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px var(--shadow);
+  transition: background 0.3s;
+}
+
+.guides li:hover {
+  background: var(--accent);
+  color: white;
 }
 
 footer {
   text-align: center;
-  padding: 1rem;
+  padding: 2rem;
   background: var(--card);
-  margin-top: 3rem;
+  color: var(--text);
+  font-size: 0.9rem;
 }
