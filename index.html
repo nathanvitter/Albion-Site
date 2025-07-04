@@ -1,17 +1,16 @@
-<!-- builds.html -->
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Albion Builds - Builds</title>
+  <title>Albion Builds - Accueil</title>
   <link rel="stylesheet" href="/assets/css/style.css">
   <script defer src="/assets/js/main.js"></script>
   <script defer src="/assets/js/lang.js"></script>
-  <script defer src="/assets/js/builds.js"></script>
 </head>
 <body>
-  <header>
+  <header class="hero-header">
     <nav class="navbar">
       <div class="logo">Albion Builds</div>
       <ul class="nav-links">
@@ -29,26 +28,55 @@
         <button id="themeToggle">🌓</button>
       </div>
     </nav>
+    <div class="hero-content">
+      <h1 data-lang="hero_title">Bienvenue sur Albion Builds</h1>
+      <p data-lang="hero_subtitle">Le point de rencontre des aventuriers d'Albion. Partage, découvre et maîtrise les meilleurs builds pour chaque situation !</p>
+      <a href="builds.html" class="cta-button" data-lang="explore_builds">Explorer les Builds</a>
+    </div>
   </header>
 
-  <main class="builds-page">
-    <section class="filters">
-      <h1 data-lang="builds_title">Tous les Builds</h1>
-      <div class="filter-group">
-        <select id="modeFilter">
-          <option value="all" data-lang="filter_all">Tous les modes</option>
-          <option value="pvp-solo" data-lang="filter_pvp_solo">PvP solo</option>
-          <option value="pvp-group" data-lang="filter_pvp_group">PvP groupe</option>
-          <option value="pve" data-lang="filter_pve">PvE</option>
-          <option value="farming" data-lang="filter_farming">Farming</option>
-          <option value="gathering" data-lang="filter_gathering">Récolte</option>
-        </select>
-        <input type="text" id="searchInput" placeholder="Rechercher un build...">
-      </div>
+  <main class="home-main">
+    <section class="community-section">
+      <h2 data-lang="community_title">Une communauté unie</h2>
+      <p data-lang="community_text">
+        Que tu sois un joueur solo, un membre de guilde, un gatherer discret ou un tank en Zerg, tu trouveras ici ta place. Des builds testés, des astuces de vétérans, et une communauté prête à t'aider à progresser.
+      </p>
     </section>
 
-    <section id="buildsContainer" class="builds-list">
-      <!-- Les fiches builds seront injectées ici par JS -->
+    <section class="join-section">
+      <h2 data-lang="join_title">Rejoignez-nous sur Discord</h2>
+      <p data-lang="join_text">Rejoins notre communauté pour discuter, partager tes builds et poser tes questions.</p>
+      <a href="#" class="discord-button">🌐 Rejoindre le Discord</a>
+    </section>
+
+    <section class="preview-section">
+      <h2 data-lang="preview_title">Aperçu des Builds</h2>
+      <div id="previewBuilds" class="build-preview-grid">
+        <!-- Aperçu dynamique depuis builds.json -->
+      </div>
+      <a href="builds.html" class="cta-button" data-lang="view_all_builds">Voir tous les builds</a>
+    </section>
+
+    <section class="features">
+      <h2 data-lang="features_title">Fonctionnalités</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3 data-lang="multi_lang">Multilingue</h3>
+          <p data-lang="multi_lang_desc">FR / EN avec détection automatique et changement en un clic.</p>
+        </div>
+        <div class="feature-card">
+          <h3 data-lang="dark_mode">Mode sombre / clair</h3>
+          <p data-lang="dark_mode_desc">Lisible partout, adapté jour/nuit avec sauvegarde du thème.</p>
+        </div>
+        <div class="feature-card">
+          <h3 data-lang="responsive">Responsive</h3>
+          <p data-lang="responsive_desc">Mobile, tablette, PC — tout est optimisé.</p>
+        </div>
+        <div class="feature-card">
+          <h3 data-lang="api_data">Données en direct</h3>
+          <p data-lang="api_data_desc">Bientôt synchronisé avec l'API officielle d'Albion pour des stats à jour.</p>
+        </div>
+      </div>
     </section>
   </main>
 
